@@ -1,6 +1,6 @@
 # nemmy
 
-government of the nemmy, by the nemmy, for the nemmy.
+Government of the nemmy, by the nemmy, for the nemmy.
 
 ## Getting Started
 
