@@ -6,7 +6,7 @@ import { useState } from "react";
 import { User } from "@nextui-org/react";
 import useSWRMutation from "swr/mutation";
 import { fetcher } from "@/lib/fetcher";
-import { getBaseEndPoint } from "@/lib/getBaseEndPoint";
+import { getBaseAPIEndPoint } from "@/lib/getBaseAPIEndPoint";
 
 interface GetUserResponse {
   userId: number;
@@ -16,7 +16,7 @@ interface GetUserResponse {
 const Users = () => {
   const [userId, setUserId] = useState("");
   const { data: user, trigger } = useSWRMutation<GetUserResponse>(
-    getBaseEndPoint() + `/users/${userId}`,
+    getBaseAPIEndPoint() + `/users/${userId}`,
     fetcher,
   );
 
