@@ -4,12 +4,14 @@ import { Button } from "@nextui-org/react";
 
 const Home = () => {
   return (
-    <>
+    <div className="flex flex-col items-center justify-center gap-2 mt-9">
       <p>I&apos;m nemmy...🥱</p>
-      <p className="text-large">Are you nemmy?</p>
-      <Button color="primary">Yes!</Button>
-      <Button color="danger">No!</Button>
-    </>
+      <p className="text-2xl">Are you nemmy?</p>
+      <div className="flex flex-row gap-2">
+        <Button color="primary">Yes!</Button>
+        <Button color="danger">No!</Button>
+      </div>
+    </div>
   );
 };
 
