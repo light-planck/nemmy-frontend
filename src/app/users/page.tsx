@@ -3,13 +3,26 @@
 import { Button } from "@nextui-org/button";
 import { Input } from "@nextui-org/input";
 import { useState } from "react";
-import { useUser } from "./hooks/useUser";
+import { User } from "@nextui-org/react";
+import useSWRMutation from "swr/mutation";
+import { fetcher } from "@/lib/fetcher";
+import { getBaseEndPoint } from "@/lib/getBaseEndPoint";
+
+interface GetUserResponse {
+  userId: number;
+  username: string;
+}
 
 const Users = () => {
   const [userId, setUserId] = useState("");
-  const { user, isLoading } = useUser(userId);
+  const { data: user, trigger } = useSWRMutation<GetUserResponse>(
+    getBaseEndPoint() + `/users/${userId}`,
+    fetcher,
+  );
 
-  console.log(user);
+  const handleClick = () => {
+    trigger();
+  };
 
   return (
     <div className="flex flex-col items-center justify-center gap-5 mt-20">
@@ -17,9 +30,15 @@ const Users = () => {
       <div className="w-1/4">
         <Input value={userId} onValueChange={setUserId} label="ユーザーID" />
       </div>
-      <Button color="success" isLoading={isLoading}>
+      <Button color="success" onClick={handleClick}>
         検索
       </Button>
+      {user && (
+        <User
+          name={user.username}
+          description={<p>ユーザーID{user.userId}</p>}
+        />
+      )}
     </div>
   );
 };
