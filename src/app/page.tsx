@@ -2,7 +2,7 @@
 
 import { Button } from "@nextui-org/react";
 
-export default function Home() {
+const Home = () => {
   return (
     <>
       <p>I&apos;m nemmy...🥱</p>
@@ -11,4 +11,6 @@ export default function Home() {
       <Button color="danger">No!</Button>
     </>
   );
-}
+};
+
+export default Home;
