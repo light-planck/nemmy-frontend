@@ -15,7 +15,11 @@ interface GetUserResponse {
 
 const Users = () => {
   const [userId, setUserId] = useState("");
-  const { data: user, trigger } = useSWRMutation<GetUserResponse>(
+  const {
+    data: user,
+    isMutating,
+    trigger,
+  } = useSWRMutation<GetUserResponse>(
     getBaseAPIEndPoint() + `/users/${userId}`,
     fetcher,
   );
@@ -30,13 +34,13 @@ const Users = () => {
       <div className="w-1/4">
         <Input value={userId} onValueChange={setUserId} label="ユーザーID" />
       </div>
-      <Button color="success" onClick={handleClick}>
+      <Button color="success" isLoading={isMutating} onClick={handleClick}>
         検索
       </Button>
       {user && (
         <User
           name={user.username}
-          description={<p>ユーザーID{user.userId}</p>}
+          description={<p>ユーザーID: {user.userId}</p>}
         />
       )}
     </div>
