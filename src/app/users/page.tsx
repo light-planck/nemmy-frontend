@@ -2,9 +2,10 @@
 
 import { Button } from "@nextui-org/button";
 import { Input } from "@nextui-org/input";
-import { useState } from "react";
 import { User } from "@nextui-org/react";
+import { useState } from "react";
 import useSWRMutation from "swr/mutation";
+
 import { fetcher } from "@/lib/fetcher";
 import { getBaseAPIEndPoint } from "@/lib/getBaseAPIEndPoint";
 
