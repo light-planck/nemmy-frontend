@@ -6,7 +6,7 @@ Government of the nemmy, by the nemmy, for the nemmy.
 
 This project uses [Bun](https://bun.sh/) for development.  
 Please ensure you have it installed on your machine.  
-You can install it using the following command:  
+You can install it using the following command:
 
 ```bash
 curl -fsSL https://bun.sh/install | bash
