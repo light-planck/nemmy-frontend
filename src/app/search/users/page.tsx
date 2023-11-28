@@ -16,7 +16,7 @@ const Users = () => {
         <Input
           value={username}
           onValueChange={setUsername}
-          label="ユーザーID"
+          label="ユーザー名"
         />
       </div>
       <Button color="success" isLoading={isMutating} onClick={() => trigger()}>
