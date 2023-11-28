@@ -7,17 +7,17 @@ import { getBaseAPIEndPoint } from "@/lib/getBaseAPIEndPoint";
 import { User } from "../types";
 
 export const useUser = () => {
-  const [userId, setUserId] = useState("");
+  const [username, setUsername] = useState("");
   const { data, isMutating, trigger } = useSWRMutation<User>(
-    getBaseAPIEndPoint() + `/users/${userId}`,
+    getBaseAPIEndPoint() + `/users/${username}`,
     fetcher,
   );
 
   return {
-    userId,
+    username,
     user: data,
     isMutating,
-    setUserId,
+    setUsername,
     trigger,
   };
 };
