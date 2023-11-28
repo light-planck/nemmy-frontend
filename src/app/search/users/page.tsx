@@ -26,7 +26,7 @@ const Users = () => {
         <User
           name={user.username}
           description={<p>{user.displayName}</p>}
-          avatarProps={{ src: user.profileImageUrl }}
+          avatarProps={{ src: user.profileImageUrl, isDisabled: isMutating }}
         />
       )}
     </div>
