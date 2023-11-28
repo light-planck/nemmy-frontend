@@ -14,7 +14,7 @@ const Home = () => {
         <Button color="primary">Yes!</Button>
         <Button color="danger">No!</Button>
       </div>
-      <Button color="success" onClick={() => router.push("/users")}>
+      <Button color="success" onClick={() => router.push("/search/users")}>
         find users
       </Button>
     </div>
